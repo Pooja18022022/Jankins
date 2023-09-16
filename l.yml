@@ -1,0 +1,10 @@
+---
+- name: Create Directory
+  hosts: localhost  # You can specify the target host(s) here
+  become: yes     # Optional, if you need elevated privileges
+  tasks:
+    - name: Create directory name
+      file:
+        path: /home/pooja/janki  # Specify the desired directory path
+        state: directory
+      delegate_to: localhost  # Run this task on the Ansible control machine
